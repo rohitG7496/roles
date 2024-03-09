@@ -1,0 +1,9 @@
+---
+- name: frontend assets
+  hosts: all
+  gather_facts: False
+  become: "{{ ROOT }}"
+  ignore_unreachable: yes
+  roles: 
+    - role: frontend-all
+      tags: allbuilds 

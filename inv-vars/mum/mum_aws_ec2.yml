@@ -1,0 +1,7 @@
+plugins: aws_ec2
+regions: 
+  - ap-south-1
+filters: 
+  instance-state-name: running
+  tag:Name: ansible
+strict_permissions: False

@@ -1,0 +1,9 @@
+#handlers
+#- name: slack-all-v5
+#  slack:
+#    token: "{{ SLACK_TOKEN }}"
+#    msg: "{{ SLACK_ALL_V5 }}"
+#    channel: "{{ CHANNEL }}"
+#  delegate_to: localhost
+#  run_once: true
+  

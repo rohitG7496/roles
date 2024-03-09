@@ -1,0 +1,31 @@
+#role
+- name: get build
+  get_url:
+    url: "{{ S3_BUCKET }}/assets.tar"
+    dest: /home/ubuntu/
+
+- name: delete build
+  ansible.builtin.file:
+    path: /var/www/livehealthapp/static/build_assets/dashboard/build
+    state: absent
+
+- name: Make dict
+  ansible.builtin.file:
+    path: /var/www/livehealthapp/static/build_assets/dashboard/build
+    state: directory
+
+- name: Extract file
+  ansible.builtin.unarchive:
+    src: /home/ubuntu/assets.tar
+    dest: /var/www/livehealthapp/static/build_assets/dashboard/build
+    remote_src: yes
+
+- name : delete tar
+  ansible.builtin.file:
+    path: /home/ubuntu/assets.tar
+    state: absent
+  notify: 
+    - slack-all-V5
+- name: flush handlers
+  meta: flush_handlers
+  tags: allbuils

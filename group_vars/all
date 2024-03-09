@@ -1,0 +1,7 @@
+#slack 
+#CHANNEL: "#devops"
+#DONE_CHANNEL: "#general"
+
+#AWS 
+AWS_ACCESS_KEY_ID: 
+AWS_SECRET_KEY_ID:
